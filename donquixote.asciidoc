@@ -2,8 +2,8 @@
 by Miguel de Cervantes, Translated by John Ormsby
 :toc:
 
-=== TRANSLATOR'S PREFACE
-I: ABOUT THIS TRANSLATION
+== TRANSLATOR'S PREFACE
+=== I: ABOUT THIS TRANSLATION
 
 
 It was with considerable reluctance that I abandoned in favour of the
@@ -207,7 +207,7 @@ injunction laid upon the Morisco in Chap. IX not to omit or add
 anything.
 
 
-II: ABOUT CERVANTES AND DON QUIXOTE
+=== II: ABOUT CERVANTES AND DON QUIXOTE
 
 Four generations had laughed over "Don Quixote" before it occurred to
 anyone to ask, who and what manner of man was this Miguel de Cervantes
@@ -1461,7 +1461,7 @@ Moliere's that has naturalised it in every country where there are
 readers, and made it a classic in every language that has a literature.
 
 
-=== SOME COMMENDATORY VERSES
+== SOME COMMENDATORY VERSES
 
 [verse, Sonnet, Urganda The Unknown to the book of Don Quixote of la Mancha]
 ____
@@ -1549,7 +1549,6 @@ ____
 ____
 
 
-
 [verse, Sonnet, Don Belianis of Greece To Don Quixote of la Mancha]
 ____
  In slashing, hewing, cleaving, word and deed, 
@@ -1567,8 +1566,6 @@ ____
       My fortune seems to sit—great Quixote, still 
     Envy of thy achievements fills my soul. 
 ____
-
-
 
 
 [verse, Sonnet, The Lady of Oriana to Dulcinea del Toboso]
@@ -1590,7 +1587,6 @@ ____
 ____
 
 
-
 [verse, Sonnet, Gandalin, Squire of Amadis of Gaul, To Sancho Panza, squire of Don Quixote ]
 ____
  All hail, illustrious man! Fortune, when she 
@@ -1610,7 +1606,6 @@ ____
 ____
 
 
-
 [verse, Sonnet, From El Donoso, The Motley Poet On Sancho Panza and Rocinante]
 ____
  I am the esquire Sancho Pan— 
@@ -1624,6 +1619,7 @@ ____
  A book divine, except for sin— 
  By speech too plain, in my opin— 
 ____
+
 
 [verse, Sonnet, On Rocinante]
 ____
@@ -1695,7 +1691,8 @@ ____
   That Sancho was a sorry go-between: 
       A booby he, hard-hearted she, and you no lover. 
 ____
- 
+
+
 [verse, Sonnet, Between Babieca and Rocinante ]
 ____
  B. "How comes it, Rocinante, you're so lean?" 
@@ -1716,7 +1713,7 @@ ____
 
 
 
-=== THE AUTHOR'S PREFACE
+== THE AUTHOR'S PREFACE
 
 
 Idle reader: thou mayest believe me without any oath that I would this
@@ -1945,6 +1942,7 @@ are scattered through the swarm of the vain books of chivalry. And
 so—may God give thee health, and not forget me. Vale.
 
 
+== PART I
 === DEDICATION OF VOLUME I
 
 
@@ -4307,7 +4305,7 @@ pressing he seated himself on the trunk of a felled oak, and tuning his
 rebeck, presently began to sing to these words.
 
 
-[verse], Antonio's Ballad]
+[verse, Antonio's Ballad]
 ____
 Thou dost love me well, Olalla; 
    Well I know it, even though 
@@ -18261,7 +18259,6 @@ verse."
 
 
 === CHAPTER XLVIII.
-~~~~
 
 
 IN WHICH THE CANON PURSUES THE SUBJECT OF THE BOOKS OF CHIVALRY, WITH
@@ -22798,7 +22795,7 @@ voice, which was neither very bad nor very good, stopped him, and
 listening attentively the pair heard him sing this
 
 
-[verse. Sonnet]
+[verse, Sonnet]
 ____
 Your pleasure, prithee, lady mine, unfold; 
    Declare the terms that I am to obey; 
