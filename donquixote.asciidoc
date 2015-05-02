@@ -1,5 +1,5 @@
 = DON QUIXOTE
-by Miguel de Cervantes, Translated by John Ormsby
+Miguel de Cervantes
 :toc:
 
 == TRANSLATOR'S PREFACE
