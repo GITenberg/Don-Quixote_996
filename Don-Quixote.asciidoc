@@ -1,6 +1,30 @@
-= DON QUIXOTE
+= Don Quixote
 Miguel de Cervantes
+v0.0.1
 :toc:
+
+[colophon]
+== Copyright
+
+This edition of _Don Quixote_ is maintained, archived, and curated as part of
+the GITENBERG PROJECT.
+
+This work is in the public domain.
+
+If you find any issues with this work, please report them at
+https://github.com/GITenberg/Don-Quixote_996/issues
+
++
+
+Cover provided by Recovering the Classics
+
+Artist: Grace Kennedy, (C) 2013
+
+Made available under a Creative Commons Attribution-NonCommercial 4.0 license
+
+https://creativecommons.org/licenses/by-nc/4.0/
+
+
 
 == TRANSLATOR'S PREFACE
 === I: ABOUT THIS TRANSLATION
