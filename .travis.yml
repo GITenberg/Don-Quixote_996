@@ -1,0 +1,27 @@
+language: ruby
+sudo: required
+before_install:
+- gem install asciidoctor tilt
+- sudo apt-get install xsltproc
+script:
+- git clone https://github.com/rdhyee/asciidoctor-htmlbook.git
+- asciidoctor -a toc -b xhtml5 -d book -T ./asciidoctor-htmlbook/htmlbook-autogen/
+  -d book Don-Quixote.asciidoc -o Don-Quixote.html
+- git clone https://github.com/sethwoodworth/HTMLBook
+- xsltproc -stringparam external.assets.list " " ./HTMLBook/htmlbook-xsl/epub.xsl
+  Don-Quixote.html
+- cp ./HTMLBook/stylesheets/epub/epub.css OEBPS
+- cp cover.png OEBPS/cover.png
+- zip -rX Don-Quixote.epub mimetype
+- zip -rX Don-Quixote.epub OEBPS/ META-INF/
+branches:
+  only:
+  - master
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: jaPAoTM6BfU0+IkDjUAhc5h2s94wmcSLv6J0A88Tz45FLfoUaF6gKJgtGrox1k0ErxCFn8hZO3hjwDBR0HyZ8iiR3RO1izhmwlkNw4IEaeGk+tNauG/rBmR0jUobl61uKBmVCHcQOPp5nXpNFmGOKm9H+WBYCAlJ+Txj64bNsA8=
+  file: Don-Quixote.epub
+  on:
+    repo: sethwoodworth/Don-Quixote_996
