@@ -1,6 +1,6 @@
 = Don Quixote
 Miguel de Cervantes
-v0.0.2
+v0.0.3
 :toc:
 
 [colophon]
