@@ -1,0 +1,43 @@
+_repo: Don-Quixote_996
+contributor:
+  translator:
+    agent_name: Ormsby, John
+    birthdate: 1829
+    deathdate: 1895
+    gutenberg_agent_id: '506'
+    url: http://www.gutenberg.org/2009/agents/506
+creator:
+  author:
+    agent_name: Cervantes Saavedra, Miguel de
+    aliases:
+    - Cervantes, Miguel de
+    - De Cervantes Saavedra, Miguel
+    - Saavedra, Miguel de Cervantes
+    - Cervantes, Michel
+    birthdate: 1547
+    deathdate: 1616
+    gutenberg_agent_id: '505'
+    url: http://www.gutenberg.org/2009/agents/505
+    wikipedia:
+    - http://es.wikipedia.org/wiki/Miguel_de_Cervantes
+    - http://en.wikipedia.org/wiki/Miguel_de_Cervantes
+description: The ingenious gentleman Don Quixote of La Mancha
+gutenberg_bookshelf:
+- Harvard Classics
+- Best Books Ever Listings
+gutenberg_issued: '2004-07-27'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '996'
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- '!lcsh:Spain -- Social life and customs -- 16th century -- Fiction'
+- '!lcc:PQ'
+- '!lcsh:Knights and knighthood -- Spain -- Fiction'
+- '!lcsh:Picaresque literature'
+- '!lcsh:Romances'
+title: Don Quixote
+url: http://www.gutenberg.org/ebooks/996
