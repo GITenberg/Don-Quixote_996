@@ -6,27 +6,21 @@ contributor:
     deathdate: 1895
     gutenberg_agent_id: '506'
     url: http://www.gutenberg.org/2009/agents/506
-covers:
-- attribution: Wedha Abdul Rasyid, 2015
-  cover_type: original
-  image_path: cover.jpg
-  rights: Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
-  rights_url: https://creativecommons.org/licenses/by-nc/4.0/
 creator:
   author:
     agent_name: Cervantes Saavedra, Miguel de
     aliases:
+    - Saavedra, Miguel de Cervantes
     - Cervantes, Miguel de
     - De Cervantes Saavedra, Miguel
-    - Saavedra, Miguel de Cervantes
     - Cervantes, Michel
     birthdate: 1547
     deathdate: 1616
     gutenberg_agent_id: '505'
     url: http://www.gutenberg.org/2009/agents/505
     wikipedia:
-    - http://es.wikipedia.org/wiki/Miguel_de_Cervantes
     - http://en.wikipedia.org/wiki/Miguel_de_Cervantes
+    - http://es.wikipedia.org/wiki/Miguel_de_Cervantes
 description: The ingenious gentleman Don Quixote of La Mancha
 gutenberg_bookshelf:
 - Harvard Classics
@@ -40,10 +34,10 @@ publisher: Project Gutenberg
 rights: Public domain in the USA.
 rights_url: http://creativecommons.org/about/pdm
 subjects:
-- '!lcsh:Spain -- Social life and customs -- 16th century -- Fiction'
 - '!lcc:PQ'
-- '!lcsh:Knights and knighthood -- Spain -- Fiction'
-- '!lcsh:Picaresque literature'
 - '!lcsh:Romances'
+- '!lcsh:Knights and knighthood -- Spain -- Fiction'
+- '!lcsh:Spain -- Social life and customs -- 16th century -- Fiction'
+- '!lcsh:Picaresque literature'
 title: Don Quixote
 url: http://www.gutenberg.org/ebooks/996
