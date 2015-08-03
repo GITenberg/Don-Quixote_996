@@ -40,10 +40,10 @@ publisher: Project Gutenberg
 rights: Public domain in the USA.
 rights_url: http://creativecommons.org/about/pdm
 subjects:
-- '!lcc:PQ'
-- '!lcsh:Romances'
-- '!lcsh:Knights and knighthood -- Spain -- Fiction'
-- '!lcsh:Spain -- Social life and customs -- 16th century -- Fiction'
-- '!lcsh:Picaresque literature'
+- '!lcsh: Spain -- Social life and customs -- 16th century -- Fiction'
+- '!lcsh: Romances'
+- '!lcc: PQ'
+- '!lcsh: Picaresque literature'
+- '!lcsh: Knights and knighthood -- Spain -- Fiction'
 title: Don Quixote
 url: http://www.gutenberg.org/ebooks/996
