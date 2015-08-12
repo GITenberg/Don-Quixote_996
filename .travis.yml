@@ -1,19 +1,20 @@
 language: ruby
-sudo: required
 before_install:
 - gem install asciidoctor tilt
-- sudo apt-get install xsltproc
 script:
-- git clone https://github.com/sethwoodworth/asciidoctor-htmlbook.git
-- asciidoctor -a toc -b xhtml5 -d book -T ./asciidoctor-htmlbook/htmlbook-autogen/
-  -d book Don-Quixote.asciidoc -o Don-Quixote.html
-- git clone https://github.com/sethwoodworth/HTMLBook
-- xsltproc -stringparam external.assets.list " " ./HTMLBook/htmlbook-xsl/epub.xsl
-  Don-Quixote.html
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- asciidoctor -a toc,version=$VERSION -b xhtml5 -T ./asciidoctor-htmlbook/htmlbook-autogen/
+  -d book book.asciidoc -o book.html
+- git clone https://github.com/gitenberg-dev/HTMLBook
+- xsltproc -stringparam external.assets.list " " ./HTMLBook/htmlbook-xsl/epub.xsl book.html
 - cp ./HTMLBook/stylesheets/epub/epub.css OEBPS
-- cp cover.png OEBPS/cover.png
-- zip -rX Don-Quixote.epub mimetype
-- zip -rX Don-Quixote.epub OEBPS/ META-INF/
+- cp cover.jpg OEBPS/cover.jpg
+- if test -d "./images"; then mv ./images ./OEBPS/ ;fi
+- zip -rX book.epub mimetype
+- zip -rX book.epub OEBPS/ META-INF/
+- if test -d "OEBPS/images/"; then zip -rX book.epub OEBPS/images/ ;fi 
+- mv book.epub Don-Quixote.epub
 branches:
   only:
   - master
@@ -21,7 +22,11 @@ deploy:
   skip_cleanup: true
   provider: releases
   api_key:
-    secure: jaPAoTM6BfU0+IkDjUAhc5h2s94wmcSLv6J0A88Tz45FLfoUaF6gKJgtGrox1k0ErxCFn8hZO3hjwDBR0HyZ8iiR3RO1izhmwlkNw4IEaeGk+tNauG/rBmR0jUobl61uKBmVCHcQOPp5nXpNFmGOKm9H+WBYCAlJ+Txj64bNsA8=
+    secure: CS+A6VZBOcs/PGp8aq/wy97XK7dNIj8Z5G6e5o5AcMJTYjPy6l7wzX2ryPa/Ie339XxAFb0kknYbJxvFW/yfoxKQazvP0/ZhfWaumur9oRl/MnJbVDmhcOrrMGNP+IXUgJKzpRk+eqNmHFCmB6XOvcboDlhV4mUwyldqu9Ux+LkGxYcz5rg6wtJTBQp3SG7dwW8JZHLdPPcpeqmBOXws3xn/H12thVlX/o1HvsR0aOa5z6043E0pU5lXUCgu/fd7cyYHybwut8U+VOqWAD//eljKkt7eTyE6cHMhpPfMwf1y8U5/Wd8vtVoFs0o5b79mV9OVbZPZKEoXB/eyxbK6xvDczmRWzBlT6TKI5q5AcU55qbM0ddvmrlMBKlglgZngVs1Cxc8k8eENlEYjQQR4Dl15wbSWH2yUsLck8Jz9fJIHwgk0zqKiz07FWcKaCy/37Wzqs2XXiOq8SnkVieNY8A7dONgC6M/cyHxNo9MYYqC1qnLf3z8xB1U2URqY2L3M7Q0m7lpGiKV9fZYVzb2QsNJA93VUJj58OYxvXfvulOOrePfqQORboA782T4xY9fTUwP/3hfQhhzlVe+27VODaP/FflBunhvgTNxj8BREgSxNdBf5vpk5X1fNTbFLVpnA0attmehonWP83qhkvaMxnSY3Aa2DumUYJ+AaYoneyls=
   file: Don-Quixote.epub
   on:
-    repo: sethwoodworth/Don-Quixote_996
+    repo: GITenberg/Don-Quixote_996
+addons:
+  apt:
+    packages:
+    - xsltproc
