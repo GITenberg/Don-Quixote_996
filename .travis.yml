@@ -11,6 +11,7 @@ script:
 - sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
 - asciidoctor -a toc,idprefix=xx_,version=$VERSION -b xhtml5 -T ./asciidoctor-htmlbook/htmlbook-autogen/
   -d book book.asciidoc -o book.html
+- cat book.html | head -n 1000
 - git clone https://github.com/gitenberg-dev/HTMLBook
 
 # make book.html available to jinja2 environment by putting it into templates
