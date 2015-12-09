@@ -3,7 +3,8 @@ dist: trusty
 language: ruby
 
 before_install:
-- gem install asciidoctor tilt
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
 
 script:
 - VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
