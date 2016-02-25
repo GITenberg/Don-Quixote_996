@@ -1,17 +1,15 @@
 sudo: required
 dist: trusty
 language: ruby
-#before_script:
-#  - echo -e "Host heroku.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-#  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+
 before_install:
-- gem install asciidoctor -v 1.5.2
+- gem install asciidoctor -v 1.5.2 
 - gem install tilt
 - sudo pip install git+https://github.com/rdhyee/ebooklib.git
 script:
 - VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
 - git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
-#- cd asciidoctor-htmlbook; git checkout jinja-hook; cd ..
+
 - sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
 - asciidoctor -a toc,idprefix=xx_,version=$VERSION -b xhtml5 -T ./asciidoctor-htmlbook/htmlbook-autogen/
   -d book book.asciidoc -o book.html
@@ -21,24 +19,31 @@ script:
 - cp book.html asciidoctor-htmlbook/gitberg-machine/templates/
 
 - /usr/bin/python asciidoctor-htmlbook/gitberg-machine/machine.py -o . -m metadata.yaml book.html
-#- /usr/bin/python ./gitberg-machine/machine.py -m /Documents/MyBook/metadata.yaml /Documents/MyBook/book.html
 - xsltproc -stringparam external.assets.list " " ./HTMLBook/htmlbook-xsl/epub.xsl book.html
 - cp ./HTMLBook/stylesheets/epub/epub.css OEBPS
 - cp cover.jpg OEBPS/cover.jpg
-- if test -d "./images"; then mv ./images ./OEBPS/ ;fi
+# look for first images directory and one found, copy over to ./OEBPS
+- find . -name images -type d | head -n 1 | xargs -I {} mv {} ./OEBPS/
 - zip -rX book.epub mimetype
 - zip -rX book.epub OEBPS/ META-INF/
 - if test -d "OEBPS/images/"; then zip -rX book.epub OEBPS/images/ ;fi
-
 - mv book.epub Don-Quixote.epub
 branches:
   only:
   - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
 deploy:
   skip_cleanup: true
   provider: releases
   api_key:
     secure: CS+A6VZBOcs/PGp8aq/wy97XK7dNIj8Z5G6e5o5AcMJTYjPy6l7wzX2ryPa/Ie339XxAFb0kknYbJxvFW/yfoxKQazvP0/ZhfWaumur9oRl/MnJbVDmhcOrrMGNP+IXUgJKzpRk+eqNmHFCmB6XOvcboDlhV4mUwyldqu9Ux+LkGxYcz5rg6wtJTBQp3SG7dwW8JZHLdPPcpeqmBOXws3xn/H12thVlX/o1HvsR0aOa5z6043E0pU5lXUCgu/fd7cyYHybwut8U+VOqWAD//eljKkt7eTyE6cHMhpPfMwf1y8U5/Wd8vtVoFs0o5b79mV9OVbZPZKEoXB/eyxbK6xvDczmRWzBlT6TKI5q5AcU55qbM0ddvmrlMBKlglgZngVs1Cxc8k8eENlEYjQQR4Dl15wbSWH2yUsLck8Jz9fJIHwgk0zqKiz07FWcKaCy/37Wzqs2XXiOq8SnkVieNY8A7dONgC6M/cyHxNo9MYYqC1qnLf3z8xB1U2URqY2L3M7Q0m7lpGiKV9fZYVzb2QsNJA93VUJj58OYxvXfvulOOrePfqQORboA782T4xY9fTUwP/3hfQhhzlVe+27VODaP/FflBunhvgTNxj8BREgSxNdBf5vpk5X1fNTbFLVpnA0attmehonWP83qhkvaMxnSY3Aa2DumUYJ+AaYoneyls=
+
   file: Don-Quixote.epub
   "on":
     repo: GITenberg/Don-Quixote_996
