@@ -1,5 +1,5 @@
 _repo: Don-Quixote_996
-_version: 0.0.12
+_version: 0.1.0
 contributor:
   translator:
     agent_name: Ormsby, John
@@ -47,5 +47,6 @@ subjects:
 - '!lcc: PQ'
 - '!lcsh: Picaresque literature'
 - '!lcsh: Knights and knighthood -- Spain -- Fiction'
+- GITenberg
 title: Don Quixote
 url: http://www.gutenberg.org/ebooks/996
