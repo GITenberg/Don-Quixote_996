@@ -1,5 +1,5 @@
 _repo: Don-Quixote_996
-_version: 0.2.1
+_version: 0.2.2
 contributor:
   translator:
     agent_name: Ormsby, John
@@ -29,6 +29,8 @@ creator:
     - http://en.wikipedia.org/wiki/Miguel_de_Cervantes
     - http://es.wikipedia.org/wiki/Miguel_de_Cervantes
 description: The ingenious gentleman Don Quixote of La Mancha
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/996#Don-Quixote
 gutenberg_bookshelf:
 - Harvard Classics
 - Best Books Ever Listings
